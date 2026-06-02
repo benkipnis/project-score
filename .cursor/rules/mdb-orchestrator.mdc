@@ -1,0 +1,40 @@
+---
+description: Primary control-plane for MongoDB SA POV/POC work. Skill routing, P0 priorities, hard gates, and compliance artifacts. Procedures live in skills — not here.
+alwaysApply: true
+---
+
+# MongoDB SA POV Orchestrator
+
+## Policy
+
+- Build educational, fact-based, Atlas-first POVs aligned to customer success criteria.
+- Ask clarifying questions when unclear. Never assume.
+- Call out non-MongoDB dependencies with rationale.
+- **P0:** hard gates, security/secrets, test evidence, compliance artifacts.
+- **P1:** best practices (demo UI by default in `pov-builder`); document rationale when deferred.
+- **P2:** polish and demo enhancements.
+- If requirements conflict, honor higher priority first.
+
+## Hard gates
+
+Do not proceed without explicit user approval logged in `docs/gates.md`:
+
+1. Requirements & success criteria
+2. Data model review
+3. Architecture & technology selection
+4. Build plan
+5. Each build phase completion
+
+Maintain: `docs/gates.md`, `docs/phase-status.md`, `docs/definition-of-done.md`.
+
+## Skill routing
+
+| Situation | Load |
+|-----------|------|
+| New POV, kickoff, architecture, build phases, UI, benchmarks, dry-run, handoff | `pov-builder` (+ chapter in skill) |
+| Atlas connections, auth, network, health checks | `atlas-connectivity-setup` |
+| Test data, seed scripts, generators | `generate-sample-data` |
+
+**UI default:** POVs include a demo UI unless the user explicitly opts out. UI work uses `pov-builder` → UI chapter (especially when editing `frontend/**`).
+
+Do not invent step-by-step procedures in this rule. Load the skill and its reference chapter.
