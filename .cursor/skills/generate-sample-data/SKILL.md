@@ -8,7 +8,7 @@ description: >-
 
 # Generate Sample Data
 
-Follow [references/sample-data-generation.md](references/sample-data-generation.md) and [references/data-modeling.md](references/data-modeling.md). Failure to follow both leads to poor demo data.
+Read and follow existing MongoDB Schema Design skills available to the harness and explicitly document the tool use and resulting schema; bad schemas lead to poor demo data.
 
 ## Required Artifacts
 
@@ -33,7 +33,7 @@ Ask the user:
 > "Do you have sample JSON documents or a schema for this collection? If so, please share them. If not, I will generate a schema based on publicly available information about your domain."
 
 - **If sample provided:** Use as basis; identify types, arrays, relationships.
-- **If none:** Research domain; draft realistic schema.
+- **If none:** Explicitly clarify domain with user and research domain; draft realistic schema.
 
 NEVER skip this step. NEVER invent a schema without sourcing attempt first.
 
@@ -41,7 +41,7 @@ NEVER skip this step. NEVER invent a schema without sourcing attempt first.
 
 Present: document structure, field types/constraints, array sizing (avg/min/max), relationships/cardinality, modeling patterns, flagged concerns.
 
-**HARD GATE:** Do NOT proceed until explicit approval. Record in `docs/gates.md`.
+**HARD GATE:** Do NOT proceed until explicit approval from user after presenting recommendations; prior approvals to proceed do not count here. Record in `docs/gates.md`.
 
 ### Step 3: Generate 5 Sample Records
 
@@ -49,7 +49,9 @@ Exactly 5 documents: field diversity, array size variation, cross-collection con
 
 ### Step 4: Sample Review and Approval Gate
 
-Ask if records look realistic. **HARD GATE:** Explicit approval before generator build. Record in `docs/gates.md`.
+Ask if records look realistic. 
+
+**HARD GATE:** Do NOT proceed until explicit approval from user after presenting recommendations; prior approvals to proceed do not count here. Record in `docs/gates.md`.
 
 ### Step 5: Build Configurable Generator
 
@@ -62,3 +64,4 @@ Run at target volume; verify counts and spot-check. Update `docs/phase-status.md
 ### Step 7: Adherence Self-check
 
 List references applied, gates logged in `docs/gates.md`.
+Update `readme.md` to include information about the data shape, makeup, and generation process including all optional parameters

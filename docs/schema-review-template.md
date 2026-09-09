@@ -37,13 +37,28 @@ List all applicable patterns and rationale:
 - Excessive normalization risk:
 - Large document (16MB) risk:
 
+## Data Realism Check (P0)
+
+Sample data must be plausible to a domain expert in the customer's vertical. Implausible data undermines every demo beat.
+
+- Realistic value ranges and units:
+- Realistic naming/identifiers for this vertical:
+- Realistic distributions (not uniform random where the real world is skewed):
+- Realistic time patterns (business hours, seasonality, bursts):
+- Who validates realism:
+
+## Demo Beat Support
+
+- Beats from `docs/demo-narrative.md` this model must support:
+- Any beat the model cannot support (and resolution):
+
 ## Open Decisions and Trade-Offs
 
 - Option A:
 - Option B:
 - Recommendation:
 
-## Hard Gate Approval
+## Hard Gate Approval (G3)
 
 - Approval requested from:
 - Approval response (exact words):

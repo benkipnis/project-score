@@ -25,7 +25,7 @@
 - Remaining risk:
 - Planned mitigation:
 
-## Hard Gate Approval
+## Hard Gate Approval (G7-Pn)
 
 - Approval requested from:
 - Approval response (exact words):

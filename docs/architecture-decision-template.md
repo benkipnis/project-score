@@ -24,13 +24,21 @@
 - Mermaid diagram link/path:
 - Animated diagram link/path (optional/P1):
 
+## Atlas Tier, Cost, and Teardown
+
+- Cluster tier and region:
+- Estimated cost for the POV window:
+- Tier above M30? Requires explicit SA confirmation: Yes / No / N/A
+- Teardown owner:
+- Target teardown date:
+
 ## Trade-Offs
 
 - Latency/performance trade-offs:
 - Cost/complexity trade-offs:
 - Operational trade-offs:
 
-## Hard Gate Approval
+## Hard Gate Approval (G4)
 
 - Approval requested from:
 - Approval response (exact words):

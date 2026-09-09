@@ -1,5 +1,9 @@
 # Performance Benchmarking
 
+## Priority
+
+Benchmarks are **P1 by default, but P0 whenever performance appears in a customer success criterion.** When P0, benchmark evidence is the proof for that criterion's gate — it cannot be deferred, and the numbers must be measured rather than estimated. Check `docs/demo-narrative.md` for any beat whose "Proves" column names a performance criterion.
+
 ## Constraints
 
 - Measure **warm** performance unless cold-start is explicitly in scope.
@@ -29,7 +33,7 @@ Benchmark Progress:
 
 ### Step 1: Confirm scope
 
-Confirm: performance targets, workload set, comparison expectations. Do not benchmark without criteria.
+Confirm: performance targets, workload set, comparison expectations. Do not benchmark without criteria. If a numeric target exists in `docs/test-plan.md`, benchmark against that exact threshold.
 
 ### Step 2: Define methodology
 

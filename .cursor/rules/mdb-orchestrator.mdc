@@ -10,8 +10,8 @@ alwaysApply: true
 - Build educational, fact-based, Atlas-first POVs aligned to customer success criteria.
 - Ask clarifying questions when unclear. Never assume.
 - Call out non-MongoDB dependencies with rationale.
-- **P0:** hard gates, security/secrets, test evidence, compliance artifacts.
-- **P1:** best practices (demo UI by default in `pov-builder`); document rationale when deferred.
+- **P0:** hard gates, security/secrets, test evidence, compliance artifacts, and anything named in a customer success criterion.
+- **P1:** best practices (demo UI by default in `pov-builder`, benchmarks); document rationale when deferred.
 - **P2:** polish and demo enhancements.
 - If requirements conflict, honor higher priority first.
 
@@ -19,11 +19,17 @@ alwaysApply: true
 
 Do not proceed without explicit user approval logged in `docs/gates.md`:
 
-1. Requirements & success criteria
-2. Data model review
-3. Architecture & technology selection
-4. Build plan
-5. Each build phase completion
+| Gate ID | Gate |
+|---|---|
+| `G1` | Requirements & success criteria |
+| `G2` | Demo narrative |
+| `G3` | Data model review |
+| `G4` | Architecture & technology selection |
+| `G5` | Build plan & scope budget |
+| `G6` | UI wireframes (if UI in scope) |
+| `G7-Pn` | Each build phase completion |
+
+A gate is complete only when approval is explicit **and** logged. If a gate is rejected or requirements change after approval, follow the change-control procedure in `pov-builder` — mark affected gates `SUPERSEDED` and re-approve in order. Never silently adapt.
 
 Maintain: `docs/gates.md`, `docs/phase-status.md`, `docs/definition-of-done.md`.
 
@@ -31,10 +37,10 @@ Maintain: `docs/gates.md`, `docs/phase-status.md`, `docs/definition-of-done.md`.
 
 | Situation | Load |
 |-----------|------|
-| New POV, kickoff, architecture, build phases, UI, benchmarks, dry-run, handoff | `pov-builder` (+ chapter in skill) |
+| New POV, kickoff, demo narrative, architecture, build phases, UI, benchmarks, dry-run, handoff | `pov-builder` — follow its numbered workflow from Step 0 |
 | Atlas connections, auth, network, health checks | `atlas-connectivity-setup` |
 | Test data, seed scripts, generators | `generate-sample-data` |
 
-**UI default:** POVs include a demo UI unless the user explicitly opts out. UI work uses `pov-builder` → UI chapter (especially when editing `frontend/**`).
+**UI default:** POVs include a demo UI unless the user explicitly opts out. UI work uses `pov-builder` → `references/ui-demo-build.md` (especially when editing `frontend/**`), and requires `G6` wireframe approval before any `frontend/` code.
 
-Do not invent step-by-step procedures in this rule. Load the skill and its reference chapter.
+Do not invent step-by-step procedures in this rule. Load `pov-builder` and run its Step 0 entry protocol first — it detects the current phase and verifies the prior gate before any work begins.
